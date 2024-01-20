@@ -44,8 +44,13 @@ Example:
     function goStore(){
         console.log("Hello World");
     }
+
 >> ```
 the function above when called will print out the ***Hello World***  statement.
+To call a function use ``goStore()``
+also one could assign the result of a function  to a variable as shown below:
+``let answer = goStore()``
+
 
 ### innerText method
 the innerText method is used to replace the text of an element.
@@ -79,3 +84,26 @@ the onclick method is used for button elements. It can be used to initiate a pro
     }
     buttomElem.onclick = changeText;
 >>```
+### Math.random()
+the Math.random() function is used to generate random numbers. If no argument is given it generates a floor point number between 0(inclusive) and 1(exclusive).
+Inclusive means that the end point is a valid value while exclusive means that the end number is not valid.
+``let userNumber = Math.random()``
+the above function will only generate numbers from 0 to 0.999.. . It will not incude the value 1.
+``userNumber = Math.random() * 10 + 1;``
+the above program will generate numbers from 1 to 10.
+
+### Math.floor()
+the Math.floor() function is used to round of a floating number to the nearest whole number or to an interger.
+```
+    userNumber;
+    userNumber = Math.floor(Math.random() * 1000 + 100);
+    console.log(userNumber);
+```
+the above program will generate random numbers from  100 to 1100. 
+
+### escape character
+the escape character, **\\** is used to prevent the program from identifying and processing special charactes.
+Example:
+```
+    console.log("hi there, welcome to \"JavaScript\".") 
+```
