@@ -22,12 +22,12 @@ let new_names = names.map(function(items){
 })
 console.log(new_names);
 
-//challenge3:
-// const myarray = ["Rachel", "Chandler", "Monica", "Ross", "Joey"];
-// let new_array = myarray.map((item)=>{
-// 	return <p> + item + </p>
-// })
-// console.log(new_array)
+// challenge3:
+const myarray = ["Rachel", "Chandler", "Monica", "Ross", "Joey"];
+let new_array = myarray.map((item)=>{
+	return `<p>${item}</p>`
+})
+console.log(new_array)
 
 //concatenation
 //using the + symbols
