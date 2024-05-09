@@ -8,6 +8,9 @@ function capitalizeString(mystring){
 let new_sentence = capitalizeString(sentence);
 console.log(new_sentence);
 
+// the map function is a higher function for arrays
+// it automatically performs the for loop for the array returning it's element
+// it takes in a function as an argument
 const numbers = [1,2,3,4];
 let new_numbers = numbers.map(function(item){
 	return item ** 2;
@@ -45,5 +48,7 @@ console.log(greet);
 let parts = ["This","is","a","sentence"];
 let new_parts = parts.join(" ");
 console.log(new_parts);
+
+
 
 
