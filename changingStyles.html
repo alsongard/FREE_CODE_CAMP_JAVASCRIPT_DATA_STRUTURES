@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .myParaStyle{
+            padding:10px;
+            border-radius: 3px;
+            background:linear-gradient(to right, rgb(192, 150, 150), rgb(70, 70, 206));
+        }
+        #myparagraph{
+            color:white;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chang styles of elements using :</h1>
+    <ol>
+        <li>add()</li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ol>
+    
+    <h2>Using add()</h2>
+    <p id="myparagraph">change my style using add() function</p>
+    <button onclick="myAdd()">Click me to add style to the paragraph above</button>
+    <button onclick="myRemove()">Click Me to remove the style applied</button>
+
+    <hr>
+    <p class="new_paragraph">Still go be  me J.Cole hunbger on the hillside</p>
+    <button onclick="myToggle()">Click me to toggle between the many styles</button>
+    <script type="text/javascript">
+        let myParagraph = document.getElementById("myparagraph");
+        let new_paragraph = document.querySelector(".new_paragraph");
+
+        function myAdd()
+        {
+            myParagraph.classList.add("myParaStyle");
+        };
+        function myRemove()
+        {
+            myParagraph.classList.remove("myParaStyle");
+        };
+        function myToggle()
+        {
+            new_paragraph.classList.toggle("myParaStyle");
+        };
+    </script>
+</body>
+</html>
