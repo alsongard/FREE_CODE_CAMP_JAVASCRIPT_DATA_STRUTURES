@@ -1,6 +1,8 @@
 const character = "#";
 const count = 8;
 const rows = [];
+let inverted = true;
+
 
 /*padRow takes 2 arguments rowNumber which is given in the loop below as i and rowCount given
 count(8). the character symbol is repeated based by the value of rowCount(8) - rowNumber(value of i)
@@ -12,10 +14,23 @@ function padRow(rowNumber, rowCount) {
 }
 
 
+// TODO: use a different type of loop
 for (let i = 1; i <= count; i++) {
-  rows.push(padRow(i, count));
+  if (inverted) {
+    rows.unshift(padRow(i, count));
+  } else {
+    rows.push(padRow(i, count));
+  }
 }
-console.log(rows);
+
+/*while (rows.length < count) {
+  rows.push(padRow(rows.length + 1, count));
+}*/
+
+/*for (let i = count; i > 0; i--) {
+  rows.push(padRow(i, count));
+}*/
+
 let result = ""
 
 for (const row of rows) {
