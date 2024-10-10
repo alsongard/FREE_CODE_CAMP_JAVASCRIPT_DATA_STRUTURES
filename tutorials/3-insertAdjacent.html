@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InsertAdjacentHTML</title>
+</head>
+<body>
+    <h1>Learning how to use InsertAdjacentHTML() method</h1>
+
+    <p>Click the button below to add paragraph after the header below</p>
+    <button id="myBtn">Click Me</button>
+    <h1 id="myHeader">Text will be added after me!</h1>
+    <script type="text/javascript">
+        const myBtn = document.getElementById("myBtn");
+        let myParagraph = "<p>I am the new paragraph to be added.</p>";
+        const myHeader = document.getElementById('myHeader');
+        myBtn.addEventListener("click", ()=>{
+            myHeader.insertAdjacentHTML("afterend", myParagraph);
+        })
+    </script>
+</body>
+</html>
