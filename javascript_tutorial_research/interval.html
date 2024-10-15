@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interval </title>
+</head>
+<body>
+    <p>Learning how to use setInterval() method</p>
+    <p id="demo"></p>
+    
+
+    <h3>Display Realtime data</h3>
+    <p id="newPara"></p>
+
+    <p>To stop the timer click button below:</p>
+    <button onclick="stopInterval()">Stop Timer</button>
+    <script type="text/javascript">
+        let myParagraph = document.getElementById("demo");
+        let newParagrahp = document.getElementById("newPara");
+        setInterval(()=>{
+            myParagraph.innerHTML += "\n Hello I am setInterval";
+        }, 100000);
+
+        let mySetInterval = setInterval(()=>{
+        const date = new Date();
+        const year = date.getFullYear();
+        const Month = date.getMonth();
+        const hour = date.getHours();
+        const minute = date.getMinutes();
+        const seconds = date.getSeconds();
+        const day = date.getDay();
+            newParagrahp.innerHTML = `${hour}:${minute}:${seconds}`;
+        }, 1000);
+
+        function stopInterval(){
+            clearInterval(mySetInterval);
+        }
+    </script>
+</body>
+</html>
