@@ -74,4 +74,5 @@ console.log(`The date is ${date.toLocaleString()} and the time is ${formattedHou
 
 ### Summary
 
-This code creates a `Date` object to get the current date and time, extracts and formats the hours and minutes, and then logs the formatted date and time to the console. Using `padStart()` ensures that hours and minutes are always displayed as two digits, even if they are single digits.
+This code creates a `Date` object to get the current date and time, extracts and formats the hours and minutes, and then logs the formatted date and time to the console. Using `padStart()` ensures that hours and minutes are always displayed as two digits, even if they are single digits
+*/
