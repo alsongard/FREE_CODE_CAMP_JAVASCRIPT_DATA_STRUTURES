@@ -104,8 +104,15 @@ The control div is show below:
 
 # javascript 
 To access an element with a given id use the ``document.getElementById()``
-
-
+```
+const calorieCounter = document.getElementById('calorie-counter');
+const budgetNumberInput = document.getElementById('budget');
+const entryDropdown = document.getElementById('entry-dropdown');
+const addEntryButton = document.getElementById('add-entry');
+const clearButton = document.getElementById('clear');
+const output = document.getElementById('output');
+let isError = false;
+```
 
 **Step 18**
 (input values accessed in javascript are of string datatype by default)
@@ -132,4 +139,81 @@ function isInvalidInput(str) {
 There is a shorthand character class to match any digit: \d. Replace your [0-9] character classes with this shorthand.
 ```
  const regex = /\d+e\d+/i;
+```
+
+
+**step 44**
+the match() method is a string method, which returns an array of the matched results. This array can contain the first match or all the matches if the global is used.
+```
+const myString = "hello world example hello mars example";
+const regex = /hello/;
+let result = myString.match(regex);
+```
+
+**step 41**
+```
+const targetInputContainer = document.querySelector(targetId + " .input-container");
+```
+
+``  const targetInputContainer = document.querySelector(`${targetId} .input-container`);``
+
+```
+function addEntry() {
+  const targetInputContainer = document.querySelector(`#${entryDropdown.value} .input-container`);
+}
+```
+
+**Step 45**
+The targetInputContainer == ``"lunch .input-contianer"``
+get all input of type== text and then get the length. This gives you the number of entries for the person has entered for each given entry(break, lunch, dinner, exercise)
+```
+const entryNumber = targetInputContainer.querySelectorAll('input[type="text"]').length;
+ ```
+
+
+**step 48**
+```
+const HTMLString = `
+<label for="${entryDropdown.value}-${entryNumber}-name">Entry ${entryNumber} Name</label>
+<input type="text" placeholder="Name" id="${entryDropdown.value}-${entryNumber}-name"/>
+`
+```
+
+**Step 51**
+```
+const HTMLString = `
+<label for="${entryDropdown.value}-${entryNumber}-name">Entry ${entryNumber} Name</label>
+<input type="text" id="${entryDropdown.value}-${entryNumber}-name" placeholder="Name" />
+<label for="${entryDropdown.value}-${entryNumber}-calories">Entry ${entryNumber} Calories</label>
+<input id="${entryDropdown.value}-${entryNumber}-calories" type="number" min="0" placeholder="Calories"/>
+`;
+```
+
+**Step 52**
+The innerHTML property sets or returns the HTML content inside an element.
+Example is show below:
+```
+<form class="userForm">
+    <div class="form-inputs">
+        <label>Enter name</label>
+        <input type="text" placeholder="Enter full name..."/>
+
+    </div>
+
+    <button type="button">Add Entry</button>
+    <input type="submit" value="Submit"/>
+</form>
+
+<script type="text/javascript">
+    let myBtn = document.querySelector("button");
+    let formInputs = document.querySelector(".form-inputs");
+    const newFormElements = `
+        <label for="age">Enter age</label>
+        <input type="number" placeholder="Age..."/>
+    `
+
+    myBtn.addEventListener("click", ()=>{
+        formInputs.innerHTML += newFormElements;
+    })
+</script>
 ```
