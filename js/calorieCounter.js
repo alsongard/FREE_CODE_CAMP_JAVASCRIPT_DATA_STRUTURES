@@ -11,6 +11,7 @@ let isError = false;
 console.log("hello".replace(/[l]/g, "1"));
 // const regex = /[+-\s]/g;  /g == set to global, \s = spacing 
 function cleanInputString(str){
+    console.log(`Orginal string: ${str}`);
     const regex = /[+-\s]/g; //set global 
     return str.replace(regex, "");
 }
@@ -23,12 +24,13 @@ function cleanInputString(str){
 
 
 // return null if no match and an array if match
+// null equals falsy
 // array return complex 
 // \d === match any digit + === any number of times
 // i === ignore case/insensitive
 function isInvalidInput(str) {
     const regex = /\d+e\d+/i;
-    return str.match(regex);
+    return str.match(regex); 
   }
   
 function addEntry() {
@@ -47,7 +49,40 @@ function addEntry() {
     />`;
     targetInputContainer.insertAdjacentHTML('beforeend', HTMLString);
   }
+  function calculateCalories(e) {
+    e.preventDefault();
+    isError = false;
   
-function getCaloriesFromInputs(list){};
+    const breakfastNumberInputs = document.querySelectorAll("#breakfast input[type='number']");
+    const lunchNumberInputs = document.querySelectorAll("#lunch input[type='number']");
+    const dinnerNumberInputs = document.querySelectorAll("#dinner input[type='number']");
+    const snacksNumberInputs = document.querySelectorAll("#snacks input[type='number']");
+    const exerciseNumberInputs = document.querySelectorAll("#exercise input[type='number']");
+  
+  
+  }
+  
+function getCaloriesFromInputs(list){
+  let calories = 0;
+  for (const item of list) {
+    // how to access the input element of type=number"
+
+    // cleaning the user input if has regex=/[-+\s]/
+    const currVal = cleanInputString(item.value);
+    const invalidInputMatch = isInvalidInput(currVal);
+
+    if (invalidInputMatch) {
+      // returns true execute block
+      // invalidInputMatch if true that is there is a match of the regex given = /\d+e\d+/i returns array of match items meaning input is invalid  otherwise it returns null === falsy(input is valid)
+      alert(`Invalid Input: ${invalidInputMatch[0]}`);
+      isError = true;
+      return null;
+    }
+    calories += Number(currVal);
+
+  }
+  return calories;
+
+};
   
 addEntryButton.addEventListener("click", addEntry);
