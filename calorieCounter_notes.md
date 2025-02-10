@@ -190,6 +190,7 @@ const HTMLString = `
 ```
 
 **Step 52**
+## **innerHTML()**
 The innerHTML property sets or returns the HTML content inside an element.
 Example is show below:
 ```
@@ -217,3 +218,46 @@ Example is show below:
     })
 </script>
 ```
+
+**step 54**
+```
+const entryNumber = targetInputContainer.document.querySelectorAll("input[type="text"]").length;
+```
+this returns 0 because on default or landing page, there are no input elements until the user clicks the addEntry button which calls the addEntry function
+To fix this we add ``+ 1``
+
+
+**Step 56**
+## ** insertAdjacentHTML()**
+the method takes 2 arguments which are:
+- place to place the added html elements(beforeend)
+- the HTMLString variable
+
+**step 57**
+## **for...of iterable datatype**
+the for ... of is a loop that is used to transverse over an array
+```
+const myNUmber = [10, 20, 30, 40, 50];
+for (const number of myNumber)
+{
+  console.log(`Value : ${number}`);
+}
+```
+
+## **Number()**
+The Number constructor is a function that converts a value to a number. If the value cannot be converted, it returns NaN which stands for "Not a Number".
+
+## **event**
+event or e is a browser event
+
+## **submit**
+the submit function by default is to reload the form page. To prevent this action we use preventDefault() method/function.
+
+## **toLowerCase()**
+This function is used to convert text to lowercase.
+
+
+## Step 95
+You also need to clear the output element's text. You can do this by setting the innerText property to an empty string.
+
+The difference between innerText and innerHTML is that innerText will not render HTML elements, but will display the tags and content as raw text.
